@@ -90,7 +90,15 @@ const getIngredients = async (req, res, next) => {
 const getIngredient = async (req, res, next) => {
     try {
         const { id } = req.params;
+
+        console.log(`id: ${id}`)
         const ingredient = await findIngredient(id, ['name', 'description', 'category', 'createdAt', 'updatedAt']);
+        if (!ingredient) {
+            return res.status(404).json({
+                code: 404,
+                message: "Ingredient not found",
+            });
+        }
         res.status(200).json({
             code: 200,
             message: "Ingredient fetched successfully",

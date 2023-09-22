@@ -97,6 +97,8 @@ const updateUser = async (req, res, next) => {
 const updateUserPassword = async (req, res, next) => {
     try {
         const { id } = req.params;
+
+        console.log(req.user._id.toString(), id);
         if (req.user._id.toString() !== id) {
             return handleErrors(res, new Error("Access denied. You do not have permission to perform this operation."), 401);
         }
