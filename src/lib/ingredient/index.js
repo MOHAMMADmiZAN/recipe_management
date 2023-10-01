@@ -2,10 +2,10 @@ const Ingredient = require('../../model/Ingredient');
 const { createLinkGenerator } = require("../../utils/linkGenerator");
 
 /**
- * Create a new index.
+ * Create a new ingredient.
  *
- * @param {Object} ingredient - The index data to create.
- * @returns {Promise<Object>} - The created index.
+ * @param {Object} ingredient - The ingredient data to create.
+ * @returns {Promise<Object>} - The created ingredient.
  */
 const createIngredient = async (ingredient) => {
     const newIngredient = new Ingredient(ingredient);
@@ -40,11 +40,11 @@ const findAllIngredients = async (query) => {
 }
 
 /**
- * Find an index by its value (either _id or name).
+ * Find an ingredient by its value (either _id or name).
  *
  * @param {string|Object} value - The value to search for (can be _id or name).
  * @param {Array} selectFields - Fields to select in the result.
- * @returns {Promise<Object|null>} - The found index or null if not found.
+ * @returns {Promise<Object|null>} - The found ingredient or null if not found.
  */
 const findIngredient = async (value, selectFields = []) => {
     // If value is not an object, assume it's the name
@@ -65,11 +65,11 @@ const findIngredient = async (value, selectFields = []) => {
 }
 
 /**
- * Update an index by its ID.
+ * Update an ingredient by its ID.
  *
- * @param {string} id - The ID of the index to update.
- * @param {Object} ingredient - The updated index data.
- * @returns {Promise<Object|null>} - The updated index or null if not found.
+ * @param {string} id - The ID of the ingredient to update.
+ * @param {Object} ingredient - The updated ingredient data.
+ * @returns {Promise<Object|null>} - The updated ingredient or null if not found.
  */
 const updateIngredient = async (id, ingredient) => {
     const filter = { _id: id };
@@ -79,10 +79,10 @@ const updateIngredient = async (id, ingredient) => {
 }
 
 /**
- * Delete an index by its ID.
+ * Delete an ingredient by its ID.
  *
- * @param {string} id - The ID of the index to delete.
- * @returns {Promise<Object|null>} - The deleted index or null if not found.
+ * @param {string} id - The ID of the ingredient to delete.
+ * @returns {Promise<Object|null>} - The deleted ingredient or null if not found.
  */
 const deleteIngredient = async (id) => {
     return Ingredient.findByIdAndDelete(id);

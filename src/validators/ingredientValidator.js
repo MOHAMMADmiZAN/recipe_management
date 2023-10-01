@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-// Define Joi schema for index validation with custom error messages
+// Define Joi schema for ingredient validation with custom error messages
 const ingredientSchema = Joi.object({
     name: Joi.string()
         .required()

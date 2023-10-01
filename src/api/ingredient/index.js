@@ -3,11 +3,11 @@ const {
     generateIngredientLinks,
     findAllIngredients,
     findIngredient, updateIngredient, deleteIngredient, totalIngredient
-} = require('../../lib/index/service')
+} = require('../../lib/ingredient')
 const {parseQueryParams, getPagination, getHATEOASForAllItems, getTransformedItems} = require("../../utils/query");
 
 /**
- * Create a new index.
+ * Create a new ingredient.
  *
  * @param {import("express").Request} req - The Express request object.
  * @param {import("express").Response} res - The Express response object.
@@ -80,7 +80,7 @@ const getIngredients = async (req, res, next) => {
 }
 
 /**
- * Get details of a specific index by ID.
+ * Get details of a specific ingredient by ID.
  *
  * @param {import("express").Request} req - The Express request object.
  * @param {import("express").Response} res - The Express response object.
@@ -116,7 +116,7 @@ const getIngredient = async (req, res, next) => {
 }
 
 /**
- * Edit an existing index by ID.
+ * Edit an existing ingredient by ID.
  *
  * @param {import("express").Request} req - The Express request object.
  * @param {import("express").Response} res - The Express response object.
@@ -157,7 +157,7 @@ const editIngredient = async (req, res, next) => {
 }
 
 /**
- * Remove an index by ID.
+ * Remove an ingredient by ID.
  *
  * @param {import("express").Request} req - The Express request object.
  * @param {import("express").Response} res - The Express response object.

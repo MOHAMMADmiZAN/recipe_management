@@ -224,7 +224,7 @@ components:
               example: /ingredients/ingredient_id1
             rel:
               type: string
-              example: index
+              example: ingredient
     "Creator":
       type: object
       properties:
@@ -1022,7 +1022,7 @@ paths:
 
   /ingredients:
     post:
-      summary: This End Point Responsible for create index
+      summary: This End Point Responsible for create ingredient
       tags:
         - Ingredient
       security:
@@ -1182,14 +1182,14 @@ paths:
           $ref: '#/components/responses/SearchNotFoundResponse'
   /ingredients/{id}:
     get:
-      summary: This End Point Responsible For Fetch index
+      summary: This End Point Responsible For Fetch ingredient
       tags:
         - Ingredient
       parameters:
         - $ref: '#/components/parameters/IdParams'
       responses:
         "200":
-          description: index Fetch Successfully
+          description: ingredient Fetch Successfully
           content:
             application/json:
               schema:
@@ -1263,7 +1263,7 @@ paths:
         "404":
           $ref: '#/components/responses/404'
     put:
-      summary: This End Point Responsible For Update index
+      summary: This End Point Responsible For Update ingredient
       tags:
         - Ingredient
       parameters:
@@ -1360,7 +1360,7 @@ paths:
                             type: string
                             example: DELETE
         "200":
-          description: index Update Successfully
+          description: ingredient Update Successfully
           content:
             application/json:
               schema:
